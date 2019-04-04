@@ -1,0 +1,6 @@
+c:\users\dabogo\documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\obj\Debug\UnGranViaje.csprojResolveAssemblyReference.cache
+c:\users\dabogo\documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\bin\Debug\UnGranViaje.pdb
+c:\users\dabogo\documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\obj\Debug\UnGranViaje.pdb
+C:\Users\dabogo\Documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\bin\Debug\UnGranViaje.exe.config
+C:\Users\dabogo\Documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\bin\Debug\UnGranViaje.exe
+C:\Users\dabogo\Documents\visual studio 2017\Projects\UnGranViaje\UnGranViaje\obj\Debug\UnGranViaje.exe
