@@ -28,7 +28,7 @@ namespace UnGranViaje
 
         public override void EstadoCombustible(Auto auto)
         {
-            auto.ConsultarEstadoCombustible();
+            _auto.ConsultarEstadoCombustible();
         }
 
     }

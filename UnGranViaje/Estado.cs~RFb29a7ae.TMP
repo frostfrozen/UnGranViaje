@@ -22,13 +22,13 @@ namespace UnGranViaje
     {
         public override void Acelerar(Auto auto, int velocidad)
         {
-            auto.AcelerarA(velocidad);
+            _auto.AcelerarA(velocidad);
         }
 
 
-        public override void EstadoCombustible(Auto auto)
+        public override void EstadoCombustible()
         {
-            auto.ConsultarEstadoCombustible();
+            _auto.ConsultarEstadoCombustible();
         }
 
     }

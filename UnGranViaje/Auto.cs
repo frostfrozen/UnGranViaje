@@ -10,21 +10,30 @@ namespace UnGranViaje
         private Estado _estado;
         private readonly int _temperaturaElectro;
         public double CapacidadMaximaTanque { get; private set; }
+
+        public void AcelerarA(object velocidad)
+        {
+            throw new NotImplementedException();
+        }
+
         public int VelocidadActual { get; private set; }
         private DateTime? _horaAceleracion;
         private IList<IParteAuto> _partesAuto;
+
+        public void ConsultarEstadoCombustible()
+        {
+            throw new NotImplementedException();
+        }
+
         private const double CONSUMOPORKM = 0.133;
 
         public Auto(string marca, double capacidadMaximaTanque)
         {
-            _estado = Apagado.Instance();
+            _estado = new Apagado();
             _partesAuto = new List<IParteAuto>();
             TemperaturasAutos.Temperatura.TryGetValue(marca, out _temperaturaElectro);
             CapacidadMaximaTanque = capacidadMaximaTanque;
 
-            // inicializo los eventos
-            Encendido.Instance().AcelerarEvent += OnAcelerar;
-            Encendido.Instance().EstadoCombustibleEvent += OnEstadoCombustible;
 
             //añado las partes vitales
             _partesAuto.Add(new TanqueCombustible(this));
@@ -33,12 +42,12 @@ namespace UnGranViaje
 
         public void Encender()
         {
-            _estado = Encendido.Instance();
+            _estado = new Encendido();
         }
 
         public void Apagar()
         {
-            _estado = Apagado.Instance();
+            _estado = new Apagado();
             VelocidadActual = 0;
             _horaAceleracion = null;
         }
@@ -64,7 +73,7 @@ namespace UnGranViaje
 
         public void Acelerar(int velocidad)
         {
-            _estado.Acelerar(velocidad);
+            _estado.Acelerar(this,  velocidad);
 
             Console.WriteLine("Dispare Evento Acelerar");
         }
@@ -97,7 +106,7 @@ namespace UnGranViaje
 
         public void EstadoCombustible()
         {
-            _estado.EstadoCombustible();
+            _estado.EstadoCombustible(this);
         }
 
         private void OnEstadoCombustible(object sender, EventArgs e)
